@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h2>Quotes List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Quote</th>
+          <th scope="col">Category</th>
+          <th scope="col">Actions</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of quote;index as i">
+          <td>{{i+1}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.quote}}</td>
+          <td>{{item.category}}</td>
+          <td>
+          <button routerLink="/updatequote/{{item.id}}" class="btn btn-warning btn-sm" >Update</button>
+          <button (click)="deletequote(item.id)" class="btn btn-danger btn-sm" >Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,14 @@
+<div class="container home-component mt-5">
+    <h2 class="text-center mb-4">Welcome to the Quote App</h2>
+
+    <div class="quote-display p-4 mb-4" *ngIf="quote">
+      <p class="quote-text">"{{ quote.quote }}"</p>
+      <p class="quote-author">- {{ quote.name }}</p>
+      <p class="quote-category">Category: {{ quote.category }}</p>
+    </div>
+  
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg" (click)="getRandomquotes()">Show Random Quote</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,22 @@
+<div style="min-height: 75.8dvh;">
+  <div class="search-container">
+    <h2>Find Quotes by Author</h2>
+    <input [(ngModel)]="authorName" placeholder="Enter author name" />
+    <button (click)="getQuotes()">Search</button>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="quotes.length > 0" class="quote-list">
+    <h3>Quotes by {{ authorName }}:</h3>
+    <ul>
+      <li *ngFor="let quote of quotes">
+        <blockquote>"{{ quote.quote }}"</blockquote>
+        <p>— {{ quote.category }}</p>
+      </li>
+    </ul>
+  </div>
+</div>
+  
